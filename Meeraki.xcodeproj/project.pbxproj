@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A903C5A8206C11BF0096CBDA /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A903C5A7206C11BF0096CBDA /* RegistrationViewController.swift */; };
+		A903C5AA206C12220096CBDA /* LetsBeginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A903C5A9206C12220096CBDA /* LetsBeginViewController.swift */; };
+		A903C5AC206C2CFD0096CBDA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A903C5AB206C2CFD0096CBDA /* HomeViewController.swift */; };
 		AECD6EB0206A1F0F00EFC1A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECD6EAF206A1F0F00EFC1A3 /* AppDelegate.swift */; };
 		AECD6EB2206A1F0F00EFC1A3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECD6EB1206A1F0F00EFC1A3 /* ViewController.swift */; };
 		AECD6EB5206A1F0F00EFC1A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AECD6EB3206A1F0F00EFC1A3 /* Main.storyboard */; };
@@ -19,6 +22,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A903C5A7206C11BF0096CBDA /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		A903C5A9206C12220096CBDA /* LetsBeginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetsBeginViewController.swift; sourceTree = "<group>"; };
+		A903C5AB206C2CFD0096CBDA /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		AECD6EAC206A1F0F00EFC1A3 /* Meeraki.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Meeraki.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AECD6EAF206A1F0F00EFC1A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AECD6EB1206A1F0F00EFC1A3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -63,8 +69,11 @@
 			isa = PBXGroup;
 			children = (
 				AECD6EAF206A1F0F00EFC1A3 /* AppDelegate.swift */,
+				A903C5A9206C12220096CBDA /* LetsBeginViewController.swift */,
 				AECD6EB1206A1F0F00EFC1A3 /* ViewController.swift */,
 				AED324C3206BBE69002DB989 /* OTPViewController.swift */,
+				A903C5A7206C11BF0096CBDA /* RegistrationViewController.swift */,
+				A903C5AB206C2CFD0096CBDA /* HomeViewController.swift */,
 				AECD6EB3206A1F0F00EFC1A3 /* Main.storyboard */,
 				AECD6EB6206A1F0F00EFC1A3 /* Assets.xcassets */,
 				AECD6EB8206A1F0F00EFC1A3 /* LaunchScreen.storyboard */,
@@ -152,6 +161,9 @@
 				AECD6EC2206A68DE00EFC1A3 /* RoundButton.swift in Sources */,
 				AECD6EB2206A1F0F00EFC1A3 /* ViewController.swift in Sources */,
 				AECD6EB0206A1F0F00EFC1A3 /* AppDelegate.swift in Sources */,
+				A903C5AA206C12220096CBDA /* LetsBeginViewController.swift in Sources */,
+				A903C5AC206C2CFD0096CBDA /* HomeViewController.swift in Sources */,
+				A903C5A8206C11BF0096CBDA /* RegistrationViewController.swift in Sources */,
 				AED324C1206B9900002DB989 /* HoshiTextField.swift in Sources */,
 				AED324C2206B9900002DB989 /* TextFieldEffects.swift in Sources */,
 			);

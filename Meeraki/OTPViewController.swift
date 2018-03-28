@@ -17,14 +17,29 @@ class OTPViewController: UIViewController {
     @IBOutlet var txtOTP4: UITextField!
     @IBOutlet var btnSubmit: RoundButton!
     @IBOutlet var resendOTPView: UIView!
+    @IBOutlet var btnResendOTP: UIButton!
     @IBOutlet var lblTimer: UILabel!
+    @IBOutlet var topView: UIView!
+    
+    weak var timer:Timer?
+    var totalSeconds = 60
+    var seconds = 60
+    var mobileNumber: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
         setRoundedImageView()
+        
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        btnResendOTP.isEnabled = false
+        initiateTimer()
+        setGradientBackground()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -35,6 +50,62 @@ class OTPViewController: UIViewController {
         txtOTP2.delegate = self
         txtOTP3.delegate = self
         txtOTP4.delegate = self
+        
+        txtOTP1.layer.borderWidth = 2
+        txtOTP1.layer.borderColor = UIColor.gray.cgColor
+        txtOTP2.layer.borderWidth = 2
+        txtOTP2.layer.borderColor = UIColor.gray.cgColor
+        txtOTP3.layer.borderWidth = 2
+        txtOTP3.layer.borderColor = UIColor.gray.cgColor
+        txtOTP4.layer.borderWidth = 2
+        txtOTP4.layer.borderColor = UIColor.gray.cgColor
+        
+        txtOTP1.becomeFirstResponder()
+    }
+    
+    func setGradientBackground() {
+        let colorTop = UIColor(red: 80/255.0, green: 184/255.0, blue: 146/255.0, alpha: 1.0).cgColor
+        let colorBottom = UIColor(red: 97/255.0, green: 202/255.0, blue: 146/255.0, alpha: 1.0).cgColor
+        
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = [ colorTop, colorBottom]
+        gradientLayer.startPoint = CGPoint.init(x: 0.0, y: 0.5)
+        gradientLayer.endPoint = CGPoint.init(x: 0.5, y: 1.0)
+        gradientLayer.frame = topView.bounds
+        
+        topView.layer.insertSublayer(gradientLayer, at: 0)
+        
+        let gradientLayer1 = CAGradientLayer()
+        gradientLayer1.colors = [ colorTop, colorBottom]
+        gradientLayer1.startPoint = CGPoint.init(x: 0.0, y: 0.5)
+        gradientLayer1.endPoint = CGPoint.init(x: 0.5, y: 1.0)
+        gradientLayer1.frame = self.view.bounds
+        
+        self.view.layer.insertSublayer(gradientLayer1, at: 0)
+    }
+    
+    func initiateTimer() {
+        seconds = totalSeconds
+        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (timer) in
+            self.seconds -= 1
+            self.lblTimer.text = self.timeString(time: TimeInterval(self.seconds))
+            if self.seconds == 0 {
+                self.invalidateTimer()
+            }
+        })
+    }
+    
+    func invalidateTimer() {
+        timer?.invalidate()
+        btnResendOTP.isEnabled = true
+    }
+    
+    func timeString(time:TimeInterval) -> String {
+        //let hours = Int(time) / 3600
+        let minutes = Int(time) / 60 % 60
+        let seconds = Int(time) % 60
+        //return String(format:”%02i:%02i:%02i”, hours, minutes, seconds)
+        return String(format:"%02i:%02i", minutes, seconds)
     }
     
     func setRoundedImageView() {
@@ -51,10 +122,22 @@ class OTPViewController: UIViewController {
         }
     }
     
+    func presentLetsBeginScreen() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let letsBeginController = storyboard.instantiateViewController(withIdentifier: "LetsBeginViewController") as! LetsBeginViewController
+        letsBeginController.isAfterReg = false
+        letsBeginController.modalPresentationStyle = .overCurrentContext
+        present(letsBeginController, animated: true, completion: nil)
+    }
+    
     @IBAction func submitOTPBtnTapped(_ sender: RoundButton) {
+        presentLetsBeginScreen()
     }
     
     @IBAction func resendOTPBtnTapped(_ sender: UIButton) {
+        timer?.invalidate()
+        btnResendOTP.isEnabled = false
+        initiateTimer()
     }
 }
 
@@ -103,6 +186,7 @@ extension OTPViewController: UITextFieldDelegate {
             return false
         }else if (textField.text?.count)! >= 1 {
             textField.text = string
+            return false
         }
         showHideBtnSubmit()
         return true

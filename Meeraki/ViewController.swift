@@ -184,5 +184,57 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         return stringWithAddedSpaces
     }
+    
+    func validateFields() -> Bool {
+        if cardTextField.text == "" {
+            showAlert("Validation alert", message: "Please enter your 16-digit card number")
+            return false
+        }else if (cardTextField.text?.count)! < 19 {
+            showAlert("Validation alert", message: "Please enter valid card number")
+            return false
+        }
+        
+        if mobNumberTextField.text == "" {
+            showAlert("Validation alert", message: "Please enter your mobile number")
+            return false
+        }else if (mobNumberTextField.text?.count)! < 10 {
+            showAlert("Validation alert", message: "Please enter valid mobile number")
+            return false
+        }
+        
+        return true
+    }
+    
+    func showAlert(_ title: String, message: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let alertAction = UIAlertAction(title: "Ok", style: .default) { (action) in
+            
+        }
+        
+        alertController.addAction(alertAction)
+        present(alertController, animated: true, completion: nil)
+    }
+    
+    func presentOTPViewController() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let otpController = storyboard.instantiateViewController(withIdentifier: "OTPViewController") as! OTPViewController
+        otpController.mobileNumber = mobNumberTextField.text!
+        self.present(otpController, animated: true, completion: nil)
+    }
+    
+    @IBAction func generateOTPBtnTapped(_ sender: RoundButton) {
+        if validateFields() == true {
+            presentOTPViewController()
+        }
+    }
+    
+    @IBAction func skipBtnTapped(_ sender: RoundButton) {
+        presentHomeScreen()
+    }
+    func presentHomeScreen() {
+        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+        let homeVC = storyboard.instantiateViewController(withIdentifier: "NAVVCID") as! UINavigationController
+        present(homeVC, animated: true, completion: nil)
+    }
 }
 
