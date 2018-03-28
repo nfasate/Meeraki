@@ -12,6 +12,10 @@
 		AECD6EB5206A1F0F00EFC1A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AECD6EB3206A1F0F00EFC1A3 /* Main.storyboard */; };
 		AECD6EB7206A1F0F00EFC1A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AECD6EB6206A1F0F00EFC1A3 /* Assets.xcassets */; };
 		AECD6EBA206A1F0F00EFC1A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AECD6EB8206A1F0F00EFC1A3 /* LaunchScreen.storyboard */; };
+		AECD6EC2206A68DE00EFC1A3 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECD6EC1206A68DE00EFC1A3 /* RoundButton.swift */; };
+		AED324C1206B9900002DB989 /* HoshiTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED324BF206B98FE002DB989 /* HoshiTextField.swift */; };
+		AED324C2206B9900002DB989 /* TextFieldEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED324C0206B9900002DB989 /* TextFieldEffects.swift */; };
+		AED324C4206BBE69002DB989 /* OTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED324C3206BBE69002DB989 /* OTPViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,10 @@
 		AECD6EB6206A1F0F00EFC1A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AECD6EB9206A1F0F00EFC1A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AECD6EBB206A1F0F00EFC1A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AECD6EC1206A68DE00EFC1A3 /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
+		AED324BF206B98FE002DB989 /* HoshiTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HoshiTextField.swift; sourceTree = "<group>"; };
+		AED324C0206B9900002DB989 /* TextFieldEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldEffects.swift; sourceTree = "<group>"; };
+		AED324C3206BBE69002DB989 /* OTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,10 +64,14 @@
 			children = (
 				AECD6EAF206A1F0F00EFC1A3 /* AppDelegate.swift */,
 				AECD6EB1206A1F0F00EFC1A3 /* ViewController.swift */,
+				AED324C3206BBE69002DB989 /* OTPViewController.swift */,
 				AECD6EB3206A1F0F00EFC1A3 /* Main.storyboard */,
 				AECD6EB6206A1F0F00EFC1A3 /* Assets.xcassets */,
 				AECD6EB8206A1F0F00EFC1A3 /* LaunchScreen.storyboard */,
 				AECD6EBB206A1F0F00EFC1A3 /* Info.plist */,
+				AECD6EC1206A68DE00EFC1A3 /* RoundButton.swift */,
+				AED324BF206B98FE002DB989 /* HoshiTextField.swift */,
+				AED324C0206B9900002DB989 /* TextFieldEffects.swift */,
 			);
 			path = Meeraki;
 			sourceTree = "<group>";
@@ -136,8 +148,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AED324C4206BBE69002DB989 /* OTPViewController.swift in Sources */,
+				AECD6EC2206A68DE00EFC1A3 /* RoundButton.swift in Sources */,
 				AECD6EB2206A1F0F00EFC1A3 /* ViewController.swift in Sources */,
 				AECD6EB0206A1F0F00EFC1A3 /* AppDelegate.swift in Sources */,
+				AED324C1206B9900002DB989 /* HoshiTextField.swift in Sources */,
+				AED324C2206B9900002DB989 /* TextFieldEffects.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,6 +292,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Meeraki/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = iDev.Meeraki;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -290,6 +307,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Meeraki/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = iDev.Meeraki;
 				PRODUCT_NAME = "$(TARGET_NAME)";
