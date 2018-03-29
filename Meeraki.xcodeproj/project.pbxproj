@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		078FCE034F9B7A017705DFA4 /* Pods_Meeraki.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF5A876F7A829563C0E4330F /* Pods_Meeraki.framework */; };
 		A903C5A8206C11BF0096CBDA /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A903C5A7206C11BF0096CBDA /* RegistrationViewController.swift */; };
 		A903C5AA206C12220096CBDA /* LetsBeginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A903C5A9206C12220096CBDA /* LetsBeginViewController.swift */; };
 		A903C5AC206C2CFD0096CBDA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A903C5AB206C2CFD0096CBDA /* HomeViewController.swift */; };
@@ -16,12 +17,24 @@
 		AECD6EB7206A1F0F00EFC1A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AECD6EB6206A1F0F00EFC1A3 /* Assets.xcassets */; };
 		AECD6EBA206A1F0F00EFC1A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AECD6EB8206A1F0F00EFC1A3 /* LaunchScreen.storyboard */; };
 		AECD6EC2206A68DE00EFC1A3 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECD6EC1206A68DE00EFC1A3 /* RoundButton.swift */; };
+		AED20386206CBFB00072879F /* RoundedCornersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED20384206CBFAD0072879F /* RoundedCornersView.swift */; };
+		AED20387206CBFB00072879F /* AnnotatedPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED20385206CBFB00072879F /* AnnotatedPhotoCell.swift */; };
+		AED2038B206CC0320072879F /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED20388206CC0210072879F /* Photo.swift */; };
+		AED2038C206CC0320072879F /* PinterestLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED20389206CC02D0072879F /* PinterestLayout.swift */; };
+		AED2038D206CC0320072879F /* UIImage+Decompression.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED2038A206CC0310072879F /* UIImage+Decompression.swift */; };
+		AED2038F206CC32A0072879F /* Photos.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AED2038E206CC32A0072879F /* Photos.xcassets */; };
+		AED20391206CC3F70072879F /* Photos.plist in Resources */ = {isa = PBXBuildFile; fileRef = AED20390206CC3F60072879F /* Photos.plist */; };
+		AED20393206D1ECB0072879F /* ProductInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED20392206D1ECB0072879F /* ProductInfoViewController.swift */; };
+		AED20395206D22650072879F /* GoogleMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED20394206D22650072879F /* GoogleMapViewController.swift */; };
+		AED20397206D2CF30072879F /* Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED20396206D2CF30072879F /* Singleton.swift */; };
 		AED324C1206B9900002DB989 /* HoshiTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED324BF206B98FE002DB989 /* HoshiTextField.swift */; };
 		AED324C2206B9900002DB989 /* TextFieldEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED324C0206B9900002DB989 /* TextFieldEffects.swift */; };
 		AED324C4206BBE69002DB989 /* OTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED324C3206BBE69002DB989 /* OTPViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		32C1AE86CD097B70AFC813DA /* Pods-Meeraki.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Meeraki.release.xcconfig"; path = "Pods/Target Support Files/Pods-Meeraki/Pods-Meeraki.release.xcconfig"; sourceTree = "<group>"; };
+		50F0609D75279E236D37FF6E /* Pods-Meeraki.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Meeraki.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Meeraki/Pods-Meeraki.debug.xcconfig"; sourceTree = "<group>"; };
 		A903C5A7206C11BF0096CBDA /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		A903C5A9206C12220096CBDA /* LetsBeginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetsBeginViewController.swift; sourceTree = "<group>"; };
 		A903C5AB206C2CFD0096CBDA /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -33,9 +46,20 @@
 		AECD6EB9206A1F0F00EFC1A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AECD6EBB206A1F0F00EFC1A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AECD6EC1206A68DE00EFC1A3 /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
+		AED20384206CBFAD0072879F /* RoundedCornersView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedCornersView.swift; sourceTree = "<group>"; };
+		AED20385206CBFB00072879F /* AnnotatedPhotoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnotatedPhotoCell.swift; sourceTree = "<group>"; };
+		AED20388206CC0210072879F /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		AED20389206CC02D0072879F /* PinterestLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinterestLayout.swift; sourceTree = "<group>"; };
+		AED2038A206CC0310072879F /* UIImage+Decompression.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Decompression.swift"; sourceTree = "<group>"; };
+		AED2038E206CC32A0072879F /* Photos.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Photos.xcassets; sourceTree = "<group>"; };
+		AED20390206CC3F60072879F /* Photos.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Photos.plist; sourceTree = "<group>"; };
+		AED20392206D1ECB0072879F /* ProductInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInfoViewController.swift; sourceTree = "<group>"; };
+		AED20394206D22650072879F /* GoogleMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleMapViewController.swift; sourceTree = "<group>"; };
+		AED20396206D2CF30072879F /* Singleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Singleton.swift; sourceTree = "<group>"; };
 		AED324BF206B98FE002DB989 /* HoshiTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HoshiTextField.swift; sourceTree = "<group>"; };
 		AED324C0206B9900002DB989 /* TextFieldEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldEffects.swift; sourceTree = "<group>"; };
 		AED324C3206BBE69002DB989 /* OTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPViewController.swift; sourceTree = "<group>"; };
+		CF5A876F7A829563C0E4330F /* Pods_Meeraki.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Meeraki.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,17 +67,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				078FCE034F9B7A017705DFA4 /* Pods_Meeraki.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5E61C9C6263DB56CA8EA5C79 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				50F0609D75279E236D37FF6E /* Pods-Meeraki.debug.xcconfig */,
+				32C1AE86CD097B70AFC813DA /* Pods-Meeraki.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		9FD2F391C13914E92FA761AF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CF5A876F7A829563C0E4330F /* Pods_Meeraki.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		AECD6EA3206A1F0E00EFC1A3 = {
 			isa = PBXGroup;
 			children = (
 				AECD6EAE206A1F0F00EFC1A3 /* Meeraki */,
 				AECD6EAD206A1F0F00EFC1A3 /* Products */,
+				5E61C9C6263DB56CA8EA5C79 /* Pods */,
+				9FD2F391C13914E92FA761AF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -73,14 +117,24 @@
 				AECD6EB1206A1F0F00EFC1A3 /* ViewController.swift */,
 				AED324C3206BBE69002DB989 /* OTPViewController.swift */,
 				A903C5A7206C11BF0096CBDA /* RegistrationViewController.swift */,
+				AED20392206D1ECB0072879F /* ProductInfoViewController.swift */,
 				A903C5AB206C2CFD0096CBDA /* HomeViewController.swift */,
 				AECD6EB3206A1F0F00EFC1A3 /* Main.storyboard */,
 				AECD6EB6206A1F0F00EFC1A3 /* Assets.xcassets */,
+				AED2038E206CC32A0072879F /* Photos.xcassets */,
 				AECD6EB8206A1F0F00EFC1A3 /* LaunchScreen.storyboard */,
 				AECD6EBB206A1F0F00EFC1A3 /* Info.plist */,
+				AED20390206CC3F60072879F /* Photos.plist */,
 				AECD6EC1206A68DE00EFC1A3 /* RoundButton.swift */,
 				AED324BF206B98FE002DB989 /* HoshiTextField.swift */,
 				AED324C0206B9900002DB989 /* TextFieldEffects.swift */,
+				AED20385206CBFB00072879F /* AnnotatedPhotoCell.swift */,
+				AED20384206CBFAD0072879F /* RoundedCornersView.swift */,
+				AED20388206CC0210072879F /* Photo.swift */,
+				AED20389206CC02D0072879F /* PinterestLayout.swift */,
+				AED2038A206CC0310072879F /* UIImage+Decompression.swift */,
+				AED20394206D22650072879F /* GoogleMapViewController.swift */,
+				AED20396206D2CF30072879F /* Singleton.swift */,
 			);
 			path = Meeraki;
 			sourceTree = "<group>";
@@ -92,9 +146,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AECD6EBE206A1F0F00EFC1A3 /* Build configuration list for PBXNativeTarget "Meeraki" */;
 			buildPhases = (
+				9FE46DE114244906EE201691 /* [CP] Check Pods Manifest.lock */,
 				AECD6EA8206A1F0F00EFC1A3 /* Sources */,
 				AECD6EA9206A1F0F00EFC1A3 /* Frameworks */,
 				AECD6EAA206A1F0F00EFC1A3 /* Resources */,
+				A1630450319C021971788DD4 /* [CP] Embed Pods Frameworks */,
+				D903261B03861FE7BC5EC485 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -118,6 +175,11 @@
 					AECD6EAB206A1F0F00EFC1A3 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -144,28 +206,101 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AED2038F206CC32A0072879F /* Photos.xcassets in Resources */,
 				AECD6EBA206A1F0F00EFC1A3 /* LaunchScreen.storyboard in Resources */,
 				AECD6EB7206A1F0F00EFC1A3 /* Assets.xcassets in Resources */,
 				AECD6EB5206A1F0F00EFC1A3 /* Main.storyboard in Resources */,
+				AED20391206CC3F70072879F /* Photos.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9FE46DE114244906EE201691 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Meeraki-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A1630450319C021971788DD4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Meeraki/Pods-Meeraki-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Meeraki/Pods-Meeraki-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D903261B03861FE7BC5EC485 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Meeraki/Pods-Meeraki-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlacePicker/Frameworks/GooglePlacePicker.framework/Resources/GooglePlacePicker.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlacePicker.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Meeraki/Pods-Meeraki-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AECD6EA8206A1F0F00EFC1A3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AED2038B206CC0320072879F /* Photo.swift in Sources */,
 				AED324C4206BBE69002DB989 /* OTPViewController.swift in Sources */,
+				AED20395206D22650072879F /* GoogleMapViewController.swift in Sources */,
 				AECD6EC2206A68DE00EFC1A3 /* RoundButton.swift in Sources */,
+				AED20393206D1ECB0072879F /* ProductInfoViewController.swift in Sources */,
+				AED20387206CBFB00072879F /* AnnotatedPhotoCell.swift in Sources */,
 				AECD6EB2206A1F0F00EFC1A3 /* ViewController.swift in Sources */,
+				AED20386206CBFB00072879F /* RoundedCornersView.swift in Sources */,
 				AECD6EB0206A1F0F00EFC1A3 /* AppDelegate.swift in Sources */,
 				A903C5AA206C12220096CBDA /* LetsBeginViewController.swift in Sources */,
+				AED2038C206CC0320072879F /* PinterestLayout.swift in Sources */,
 				A903C5AC206C2CFD0096CBDA /* HomeViewController.swift in Sources */,
 				A903C5A8206C11BF0096CBDA /* RegistrationViewController.swift in Sources */,
 				AED324C1206B9900002DB989 /* HoshiTextField.swift in Sources */,
 				AED324C2206B9900002DB989 /* TextFieldEffects.swift in Sources */,
+				AED20397206D2CF30072879F /* Singleton.swift in Sources */,
+				AED2038D206CC0320072879F /* UIImage+Decompression.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,13 +435,15 @@
 		};
 		AECD6EBF206A1F0F00EFC1A3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 50F0609D75279E236D37FF6E /* Pods-Meeraki.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = EJAV6NKXF7;
 				INFOPLIST_FILE = Meeraki/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = iDev.Meeraki;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Meeraki;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -315,13 +452,15 @@
 		};
 		AECD6EC0206A1F0F00EFC1A3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 32C1AE86CD097B70AFC813DA /* Pods-Meeraki.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = EJAV6NKXF7;
 				INFOPLIST_FILE = Meeraki/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = iDev.Meeraki;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Meeraki;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

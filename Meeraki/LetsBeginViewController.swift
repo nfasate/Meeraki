@@ -77,7 +77,8 @@ class LetsBeginViewController: UIViewController {
     
     func presentHomeScreen() {
         let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
-        let homeVC = storyboard.instantiateViewController(withIdentifier: "NAVVCID") as! UINavigationController
+        //let homeVC = storyboard.instantiateViewController(withIdentifier: "NAVVCID") as! UINavigationController
+        let homeVC = storyboard.instantiateViewController(withIdentifier: "MainTabBarController") as! UITabBarController
         present(homeVC, animated: true, completion: nil)
     }
     

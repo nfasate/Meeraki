@@ -140,6 +140,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         if cardNumberWithoutSpaces.count > 10 {
             textField.text = previousTextFieldContent
             textField.selectedTextRange = previousSelection
+            mobNumberTextField.resignFirstResponder()
             return
         }
         
@@ -231,9 +232,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBAction func skipBtnTapped(_ sender: RoundButton) {
         presentHomeScreen()
     }
+    
     func presentHomeScreen() {
         let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
-        let homeVC = storyboard.instantiateViewController(withIdentifier: "NAVVCID") as! UINavigationController
+        //let homeVC = storyboard.instantiateViewController(withIdentifier: "NAVVCID") as! UINavigationController
+        
+        let homeVC = storyboard.instantiateViewController(withIdentifier: "MainTabBarController") as! UITabBarController
+        
         present(homeVC, animated: true, completion: nil)
     }
 }
