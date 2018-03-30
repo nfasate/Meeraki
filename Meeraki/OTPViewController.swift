@@ -38,6 +38,7 @@ class OTPViewController: UIViewController {
         btnResendOTP.isEnabled = false
         initiateTimer()
         setGradientBackground()
+        setShadowToButton()
     }
     
     override func didReceiveMemoryWarning() {
@@ -61,6 +62,13 @@ class OTPViewController: UIViewController {
         txtOTP4.layer.borderColor = UIColor.gray.cgColor
         
         txtOTP1.becomeFirstResponder()
+        
+    }
+    
+    func setShadowToButton() {
+        btnSubmit.layer.shadowColor = UIColor.black.cgColor
+        btnSubmit.layer.shadowOffset = CGSize(width: 0, height: 2.0)
+        btnSubmit.layer.shadowOpacity = 0.6
     }
     
     func setGradientBackground() {
@@ -116,6 +124,10 @@ class OTPViewController: UIViewController {
         if txtOTP1.text != "", txtOTP2.text != "", txtOTP3.text != "", txtOTP4.text != "" {
             btnSubmit.isHidden = false
             resendOTPView.isHidden = true
+            btnSubmit.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
+            UIView.animate(withDuration: 0.4, animations: {
+                self.btnSubmit.transform = .identity
+            })
         }else {
             btnSubmit.isHidden = true
             resendOTPView.isHidden = false

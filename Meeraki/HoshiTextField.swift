@@ -110,6 +110,8 @@ import UIKit
 		})
 
         activeBorderLayer.frame = rectForBorder(borderThickness.active, isFilled: true)
+        
+        placeholderLabel.font = placeholderFontFromFontTemp(font!, placeholderSize: 0.65)
     }
     
     override open func animateViewsForTextDisplay() {
@@ -122,6 +124,9 @@ import UIKit
             })
             
             activeBorderLayer.frame = self.rectForBorder(self.borderThickness.active, isFilled: false)
+            placeholderLabel.font = placeholderFontFromFontTemp(font!, placeholderSize: 0.90)
+        }else {
+            placeholderLabel.font = placeholderFontFromFontTemp(font!, placeholderSize: 0.65)
         }
     }
     
@@ -148,6 +153,11 @@ import UIKit
     
     private func placeholderFontFromFont(_ font: UIFont) -> UIFont! {
         let smallerFont = UIFont(name: font.fontName, size: font.pointSize * placeholderFontScale)
+        return smallerFont
+    }
+    
+    private func placeholderFontFromFontTemp(_ font: UIFont, placeholderSize: CGFloat) -> UIFont! {
+        let smallerFont = UIFont(name: font.fontName, size: font.pointSize * placeholderSize)
         return smallerFont
     }
     

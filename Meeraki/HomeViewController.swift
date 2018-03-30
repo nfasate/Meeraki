@@ -20,6 +20,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
        
+        self.title = "My Product"
         //searchBar.placeholder = "Your placeholder"
         //let leftNavBarButton = UIBarButtonItem(customView:searchBar)
         //self.navigationItem.titleView = searchBar
@@ -121,6 +122,13 @@ class HomeViewController: UIViewController {
         productInfo.title = photo.caption
         self.navigationController?.pushViewController(productInfo, animated: true)
     }
+    
+    func presentWebView() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let webViewController = storyboard.instantiateViewController(withIdentifier: "WebViewController") as! WebViewController
+        webViewController.title = "Samsung"
+        self.navigationController?.pushViewController(webViewController, animated: true)
+    }
 }
 
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -137,7 +145,11 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: false)
-        presentProductInfoScreen(indexItem: indexPath.item)
+        if photos[indexPath.item].caption == "Samsung" {
+            presentWebView()
+        }else {
+            presentProductInfoScreen(indexItem: indexPath.item)
+        }
     }
 }
 
@@ -156,7 +168,7 @@ extension HomeViewController: PinterestLayoutDelegate {
         let annotationHeaderHeight = CGFloat(17)
         
         let photo = photos[indexPath.item]
-        let font = UIFont(name: "AvenirNext-Regular", size: 10)!
+        let font = UIFont(name: "ClanPro-Book", size: 10)!
         let commentHeight = photo.heightForComment(font, width: width)
         let height = annotationPadding + annotationHeaderHeight + commentHeight + annotationPadding
         return height

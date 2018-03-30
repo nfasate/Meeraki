@@ -60,6 +60,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.sharedManager().enableAutoToolbar = true
         IQKeyboardManager.sharedManager().shouldShowToolbarPlaceholder = true
         IQKeyboardManager.sharedManager().toolbarDoneBarButtonItemText = NSLocalizedString("Done", comment: "")
+        IQKeyboardManager.sharedManager().keyboardDistanceFromTextField = 40
     }
     
     /**

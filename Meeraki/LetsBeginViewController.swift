@@ -45,6 +45,7 @@ class LetsBeginViewController: UIViewController {
         
         if isAfterReg {
             if isSuccess {
+                btnLetsBegin.setTitle("Let's Start", for: .normal)
                 lblSubTitle.text = subTitle1
             }else {
                 lblTitle.isHidden = true
