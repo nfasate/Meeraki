@@ -23,9 +23,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var backgroundUpdateTask: UIBackgroundTaskIdentifier!
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+
         setupIQkeyboardManager()
         googleMapSetup()
+        navigationBarSetup()
+
         return true
     }
 
@@ -60,7 +62,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.sharedManager().enableAutoToolbar = true
         IQKeyboardManager.sharedManager().shouldShowToolbarPlaceholder = true
         IQKeyboardManager.sharedManager().toolbarDoneBarButtonItemText = NSLocalizedString("Done", comment: "")
-        IQKeyboardManager.sharedManager().keyboardDistanceFromTextField = 40
+        //IQKeyboardManager.sharedManager().keyboardDistanceFromTextField = 40
     }
     
     /**
@@ -68,37 +70,46 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
      */
     func googleMapSetup()
     {
-//        var isKeyAvailable = false
-//        if let googleMapKey = UserDefault.sharedInstance.getGoogleMapKey()
-//        {
-//            isKeyAvailable = true
-//            Macros.ApiKeys.googleMapKeyProd = googleMapKey
-//        }
-//
-//        #if RELEASE
-//            // All release constants
-//            Macros.Constants.isTesting  = false
-//            if Macros.Constants.plistFileName == "Aegis-Eyez"
-//            {
-//                Macros.ApiKeys.mapKeyGoogle = Macros.ApiKeys.googleMapKeyProd
-//            }else
-//            {
-//                Macros.ApiKeys.mapKeyGoogle = Macros.ApiKeys.googleMapKeyDev
-//            }
-//        #else
-//            // All debug constants
-//            Macros.Constants.isTesting  = true
-//            Macros.ApiKeys.mapKeyGoogle = Macros.ApiKeys.googleMapKeyDev
-//        #endif
-//
-//        if isKeyAvailable == false {
-//            UserDefaults.standard.setValue(Macros.ApiKeys.mapKeyGoogle, forKey: "googleMapConfigKey")
-//        }
+        //        var isKeyAvailable = false
+        //        if let googleMapKey = UserDefault.sharedInstance.getGoogleMapKey()
+        //        {
+        //            isKeyAvailable = true
+        //            Macros.ApiKeys.googleMapKeyProd = googleMapKey
+        //        }
+        //
+        //        #if RELEASE
+        //            // All release constants
+        //            Macros.Constants.isTesting  = false
+        //            if Macros.Constants.plistFileName == "Aegis-Eyez"
+        //            {
+        //                Macros.ApiKeys.mapKeyGoogle = Macros.ApiKeys.googleMapKeyProd
+        //            }else
+        //            {
+        //                Macros.ApiKeys.mapKeyGoogle = Macros.ApiKeys.googleMapKeyDev
+        //            }
+        //        #else
+        //            // All debug constants
+        //            Macros.Constants.isTesting  = true
+        //            Macros.ApiKeys.mapKeyGoogle = Macros.ApiKeys.googleMapKeyDev
+        //        #endif
+        //
+        //        if isKeyAvailable == false {
+        //            UserDefaults.standard.setValue(Macros.ApiKeys.mapKeyGoogle, forKey: "googleMapConfigKey")
+        //        }
         
         GMSServices.provideAPIKey("AIzaSyBh4Px06vNGuFRY1ClNDkJZW65CKSzCdi8")
         GMSPlacesClient.provideAPIKey("AIzaSyBh4Px06vNGuFRY1ClNDkJZW65CKSzCdi8")
         
         setupLocationManager(withDistanceFilter: true, distanceFilter: 50.0)
+    }
+    
+    func navigationBarSetup() {
+        let attributes = [NSAttributedStringKey.font: UIFont(name: "ClanPro-News", size: 17)!, NSAttributedStringKey.foregroundColor : UIColor.white]
+        UINavigationBar.appearance().titleTextAttributes = attributes
+        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor: UIColor.gray, NSAttributedStringKey.font: UIFont(name: "ClanPro-News", size: 14)!], for:.normal)
+        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor: UIColor.white, NSAttributedStringKey.font: UIFont(name: "ClanPro-News", size: 14)!], for:.selected)
+        
+        UITabBar.appearance().tintColor = UIColor(red: 255/255.0, green: 255/255.0, blue: 255/255.0, alpha: 1.0)
     }
 }
 
@@ -156,9 +167,9 @@ extension AppDelegate: CLLocationManagerDelegate {
                     
                     UserDefaults.standard.set("\(newLoc.longitude)", forKey: "userLastLocationLong")
                     
-                    Macros.Constants.userCurrentLat = (newLoc.latitude)
+                    Macros.Variables.userCurrentLat = (newLoc.latitude)
                     
-                    Macros.Constants.userCurrentLong = (newLoc.longitude)
+                    Macros.Variables.userCurrentLong = (newLoc.longitude)
                     
                     //sendNewLocationToServer(newLoc: newLoc)
                 }
@@ -188,9 +199,9 @@ extension AppDelegate: CLLocationManagerDelegate {
                 
                 UserDefaults.standard.set("\(newLoc.longitude)", forKey: "userLastLocationLong")
                 
-                Macros.Constants.userCurrentLat = (newLoc.latitude)
+                Macros.Variables.userCurrentLat = (newLoc.latitude)
                 
-                Macros.Constants.userCurrentLong = (newLoc.longitude)
+                Macros.Variables.userCurrentLong = (newLoc.longitude)
                 
                 //sendNewLocationToServer(newLoc: newLoc)
                 

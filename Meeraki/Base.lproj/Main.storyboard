@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8Ks-ri-Af4">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -29,16 +29,16 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Meeraki" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="Meeraki" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5ZC-uY-5tP">
-                                <rect key="frame" x="30" y="247.5" width="315" height="200"/>
+                                <rect key="frame" x="30" y="277.5" width="315" height="230"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4NT-8H-riO">
-                                        <rect key="frame" x="0.0" y="8" width="315" height="185"/>
+                                        <rect key="frame" x="0.0" y="13" width="315" height="205"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="16-digit card number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TCa-Wh-Vod" customClass="HoshiTextField" customModule="Meeraki" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.5" width="314.5" height="50"/>
@@ -87,13 +87,13 @@
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7M1-Iz-WnM" customClass="RoundButton" customModule="Meeraki" customModuleProvider="target">
-                                                <rect key="frame" x="67.5" y="150.5" width="180" height="35"/>
+                                                <rect key="frame" x="67.5" y="170.5" width="180" height="35"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="A2R-Ei-yba"/>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="180" id="Q5M-qW-4Nk"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="ClanPro-News" family="Clan Pro" pointSize="15"/>
+                                                <fontDescription key="fontDescription" name="ClanPro-News" family="Clan Pro" pointSize="17"/>
                                                 <color key="tintColor" red="0.55005859374999999" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="Ganerate OTP">
                                                     <color key="titleColor" white="0.3740167942" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -111,16 +111,25 @@
                                                     <action selector="generateOTPBtnTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HzX-an-OPM"/>
                                                 </connections>
                                             </button>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="card" translatesAutoresizingMaskIntoConstraints="NO" id="Wzx-Nh-XJC">
+                                                <rect key="frame" x="290" y="25" width="25" height="25"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="25" id="Jfs-ov-Ib9"/>
+                                                    <constraint firstAttribute="height" constant="25" id="elz-wm-r8G"/>
+                                                </constraints>
+                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="Wzx-Nh-XJC" secondAttribute="trailing" id="1oE-gx-qiF"/>
                                             <constraint firstItem="hXY-z3-vkH" firstAttribute="width" secondItem="TCa-Wh-Vod" secondAttribute="width" id="3p2-O8-bBb"/>
                                             <constraint firstItem="TCa-Wh-Vod" firstAttribute="top" secondItem="4NT-8H-riO" secondAttribute="top" id="47C-BQ-rDn"/>
-                                            <constraint firstItem="7M1-Iz-WnM" firstAttribute="top" secondItem="hXY-z3-vkH" secondAttribute="bottom" constant="30" id="57p-DB-sEJ"/>
+                                            <constraint firstItem="7M1-Iz-WnM" firstAttribute="top" secondItem="hXY-z3-vkH" secondAttribute="bottom" constant="50" id="57p-DB-sEJ"/>
                                             <constraint firstItem="TCa-Wh-Vod" firstAttribute="centerX" secondItem="4NT-8H-riO" secondAttribute="centerX" id="6Et-sB-E55"/>
                                             <constraint firstItem="hXY-z3-vkH" firstAttribute="centerX" secondItem="TCa-Wh-Vod" secondAttribute="centerX" id="UKA-Pn-OOx"/>
                                             <constraint firstItem="7M1-Iz-WnM" firstAttribute="centerX" secondItem="hXY-z3-vkH" secondAttribute="centerX" id="bSF-Gv-a93"/>
                                             <constraint firstAttribute="bottom" secondItem="7M1-Iz-WnM" secondAttribute="bottom" id="fPA-VS-LX5"/>
+                                            <constraint firstItem="hXY-z3-vkH" firstAttribute="top" secondItem="Wzx-Nh-XJC" secondAttribute="bottom" constant="20.5" id="fru-Dl-8WY"/>
                                             <constraint firstItem="hXY-z3-vkH" firstAttribute="top" secondItem="TCa-Wh-Vod" secondAttribute="bottom" constant="20" id="mxw-fC-uzw"/>
                                             <constraint firstItem="TCa-Wh-Vod" firstAttribute="width" secondItem="4NT-8H-riO" secondAttribute="width" id="yWT-XC-HMC"/>
                                         </constraints>
@@ -130,18 +139,18 @@
                                 <constraints>
                                     <constraint firstItem="4NT-8H-riO" firstAttribute="centerY" secondItem="5ZC-uY-5tP" secondAttribute="centerY" id="8y2-EE-C2r"/>
                                     <constraint firstAttribute="trailing" secondItem="4NT-8H-riO" secondAttribute="trailing" id="Cio-fD-bqz"/>
-                                    <constraint firstAttribute="height" constant="200" id="LQS-wb-ada"/>
+                                    <constraint firstAttribute="height" constant="230" id="LQS-wb-ada"/>
                                     <constraint firstItem="4NT-8H-riO" firstAttribute="leading" secondItem="5ZC-uY-5tP" secondAttribute="leading" id="cfU-qM-ZvK"/>
                                     <constraint firstItem="4NT-8H-riO" firstAttribute="centerX" secondItem="5ZC-uY-5tP" secondAttribute="centerX" id="y2K-v8-nzK"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wst-F1-qdM" customClass="RoundButton" customModule="Meeraki" customModuleProvider="target">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wst-F1-qdM" customClass="RoundButton" customModule="Meeraki" customModuleProvider="target">
                                 <rect key="frame" x="30" y="612" width="315" height="35"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="agp-pc-ooU"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="ClanPro-News" family="Clan Pro" pointSize="15"/>
+                                <fontDescription key="fontDescription" name="ClanPro-News" family="Clan Pro" pointSize="17"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Skip">
                                     <color key="titleColor" red="0.0072265625000000003" green="0.0072265625000000003" blue="0.0072265625000000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -160,7 +169,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5LY-pB-D8Z">
-                                <rect key="frame" x="30" y="70" width="315" height="157.5"/>
+                                <rect key="frame" x="30" y="100" width="315" height="157.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="XXXX XXXX XXXX XXXX" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6cB-E7-kcT">
                                         <rect key="frame" x="15" y="67.5" width="285" height="23"/>
@@ -190,10 +199,26 @@
                                     <constraint firstAttribute="trailing" secondItem="e9d-q5-gDd" secondAttribute="trailing" constant="15" id="gR7-bv-hTi"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RFD-IT-6Gg">
+                                <rect key="frame" x="10" y="32" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="Hm9-Hf-MSe"/>
+                                    <constraint firstAttribute="width" secondItem="RFD-IT-6Gg" secondAttribute="height" multiplier="1:1" id="bvw-dc-9Hc"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="back-arrow">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="backBtnTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0hV-XZ-Xbf"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.79733304693766283" green="0.93109340158565479" blue="0.95787109375000001" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="RFD-IT-6Gg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="12" id="7tf-TW-Gbc"/>
                             <constraint firstItem="Wst-F1-qdM" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="JtY-KT-NNq"/>
+                            <constraint firstItem="RFD-IT-6Gg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="S3o-F0-SqQ"/>
                             <constraint firstItem="Wst-F1-qdM" firstAttribute="width" secondItem="5ZC-uY-5tP" secondAttribute="width" id="TYZ-ej-emv"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Wst-F1-qdM" secondAttribute="bottom" constant="20" id="VcR-ax-Ybd"/>
                             <constraint firstItem="5LY-pB-D8Z" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="WJo-fh-rcb"/>
@@ -202,12 +227,13 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5LY-pB-D8Z" secondAttribute="trailing" constant="30" id="fxy-d5-7ba"/>
                             <constraint firstItem="5ZC-uY-5tP" firstAttribute="width" secondItem="5LY-pB-D8Z" secondAttribute="width" id="hfq-wv-drq"/>
                             <constraint firstItem="5ZC-uY-5tP" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="jSd-KD-VQW"/>
-                            <constraint firstItem="5LY-pB-D8Z" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="vkB-rg-bN2"/>
+                            <constraint firstItem="5LY-pB-D8Z" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="80" id="vkB-rg-bN2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="cardBaseView" destination="5ZC-uY-5tP" id="bri-FI-txw"/>
+                        <outlet property="cardImageView" destination="Wzx-Nh-XJC" id="QdX-jP-qQY"/>
                         <outlet property="cardNumberLabel" destination="6cB-E7-kcT" id="RMl-v8-EvK"/>
                         <outlet property="cardTextField" destination="TCa-Wh-Vod" id="eYD-BN-S5k"/>
                         <outlet property="cardView" destination="5LY-pB-D8Z" id="yPO-MV-bGB"/>
@@ -242,10 +268,26 @@
                                             <constraint firstAttribute="width" secondItem="7cD-eC-vTV" secondAttribute="height" multiplier="1:1" id="cvj-n3-cxG"/>
                                         </constraints>
                                     </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OIx-Fa-Z2h">
+                                        <rect key="frame" x="10" y="12" width="20" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="OIx-Fa-Z2h" secondAttribute="height" multiplier="1:1" id="DFT-tg-OVb"/>
+                                            <constraint firstAttribute="width" constant="20" id="KO9-tY-qt9"/>
+                                        </constraints>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" image="back-arrow">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="backBtnTapped:" destination="aed-dq-vGB" eventType="touchUpInside" id="atD-ft-rdp"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.31372549019607843" green="0.72156862745098038" blue="0.5725490196078431" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="7cD-eC-vTV" firstAttribute="centerX" secondItem="MQm-Bb-2BQ" secondAttribute="centerX" id="Tlc-1M-lQi"/>
+                                    <constraint firstItem="OIx-Fa-Z2h" firstAttribute="top" secondItem="MQm-Bb-2BQ" secondAttribute="top" constant="12" id="YVn-Sr-ODK"/>
+                                    <constraint firstItem="OIx-Fa-Z2h" firstAttribute="leading" secondItem="MQm-Bb-2BQ" secondAttribute="leading" constant="10" id="lzw-KD-hks"/>
                                     <constraint firstAttribute="bottom" secondItem="7cD-eC-vTV" secondAttribute="bottom" constant="-40" id="tC7-DT-bqh"/>
                                 </constraints>
                             </view>
@@ -308,23 +350,23 @@
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="uMc-U4-bIZ">
-                                        <rect key="frame" x="33.5" y="15" width="173" height="15.5"/>
+                                        <rect key="frame" x="40" y="15" width="160" height="15.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Didn't get the OTP?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kU0-MB-VLj">
-                                                <rect key="frame" x="0.0" y="0.0" width="128.5" height="15.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="115.5" height="15.5"/>
                                                 <fontDescription key="fontDescription" name="ClanPro-Book" family="Clan Pro" pointSize="12"/>
                                                 <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gQV-1d-Q4w">
-                                                <rect key="frame" x="138.5" y="0.0" width="34.5" height="15.5"/>
+                                                <rect key="frame" x="125.5" y="0.0" width="34.5" height="15.5"/>
                                                 <fontDescription key="fontDescription" name="ClanPro-Book" family="Clan Pro" pointSize="12"/>
                                                 <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="173" id="9jf-e4-YP2"/>
+                                            <constraint firstAttribute="width" constant="160" id="9jf-e4-YP2"/>
                                         </constraints>
                                     </stackView>
                                 </subviews>
@@ -391,6 +433,7 @@
                         <outlet property="btnResendOTP" destination="ScL-Wd-cEG" id="qej-h8-qIb"/>
                         <outlet property="btnSubmit" destination="pxg-2a-LjB" id="QL0-mz-Byi"/>
                         <outlet property="imageView" destination="7cD-eC-vTV" id="grq-cQ-DAB"/>
+                        <outlet property="lblInfo" destination="pfK-L3-V59" id="xPJ-er-i5O"/>
                         <outlet property="lblTimer" destination="gQV-1d-Q4w" id="lvw-Md-XZc"/>
                         <outlet property="resendOTPView" destination="ebZ-33-eQg" id="VFe-NW-JB8"/>
                         <outlet property="topView" destination="MQm-Bb-2BQ" id="6ZF-aQ-Aq5"/>
@@ -781,23 +824,23 @@
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xoE-5T-dkg">
-                                <rect key="frame" x="15" y="133.5" width="345" height="400"/>
+                                <rect key="frame" x="20" y="133.5" width="335" height="400"/>
                                 <color key="backgroundColor" red="0.31372549020000001" green="0.72156862749999995" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Your account has been verified. Now lets quickly create your profile." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4hi-WL-CZf">
-                                <rect key="frame" x="20" y="260" width="335" height="88"/>
-                                <fontDescription key="fontDescription" name="ClanPro-Book" family="Clan Pro" pointSize="23"/>
+                                <rect key="frame" x="20" y="265.5" width="335" height="76.5"/>
+                                <fontDescription key="fontDescription" name="ClanPro-Book" family="Clan Pro" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mke-xW-0PR" customClass="RoundButton" customModule="Meeraki" customModuleProvider="target">
-                                <rect key="frame" x="97" y="418" width="180" height="35"/>
+                                <rect key="frame" x="97" y="412" width="180" height="35"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="AHc-3R-rgC"/>
                                     <constraint firstAttribute="width" constant="180" id="j8t-bC-WJQ"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="ClanPro-News" family="Clan Pro" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="ClanPro-News" family="Clan Pro" pointSize="17"/>
                                 <state key="normal" title="Let's Begin">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -815,7 +858,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Congratulations !!!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aaT-kL-VdM">
-                                <rect key="frame" x="77" y="207" width="222" height="32"/>
+                                <rect key="frame" x="77" y="212.5" width="222" height="32"/>
                                 <fontDescription key="fontDescription" name="ClanPro-Book" family="Clan Pro" pointSize="25"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -833,8 +876,8 @@
                             <constraint firstItem="fcK-Jx-s9t" firstAttribute="leading" secondItem="Zkl-Jy-g1w" secondAttribute="leading" id="ji6-cL-M0y"/>
                             <constraint firstAttribute="bottom" secondItem="fcK-Jx-s9t" secondAttribute="bottom" id="jnU-IN-ysi"/>
                             <constraint firstItem="4hi-WL-CZf" firstAttribute="leading" secondItem="Sxs-tf-gcS" secondAttribute="leading" constant="20" id="jzT-CV-7Eu"/>
-                            <constraint firstItem="xoE-5T-dkg" firstAttribute="leading" secondItem="Sxs-tf-gcS" secondAttribute="leading" constant="15" id="k0y-mu-anH"/>
-                            <constraint firstItem="Sxs-tf-gcS" firstAttribute="trailing" secondItem="xoE-5T-dkg" secondAttribute="trailing" constant="15" id="kKW-ED-s0n"/>
+                            <constraint firstItem="xoE-5T-dkg" firstAttribute="leading" secondItem="Sxs-tf-gcS" secondAttribute="leading" constant="20" id="k0y-mu-anH"/>
+                            <constraint firstItem="Sxs-tf-gcS" firstAttribute="trailing" secondItem="xoE-5T-dkg" secondAttribute="trailing" constant="20" id="kKW-ED-s0n"/>
                             <constraint firstItem="xoE-5T-dkg" firstAttribute="centerY" secondItem="Zkl-Jy-g1w" secondAttribute="centerY" id="n4x-hu-Kgn"/>
                             <constraint firstItem="Sxs-tf-gcS" firstAttribute="trailing" secondItem="4hi-WL-CZf" secondAttribute="trailing" constant="20" id="wZy-EJ-2aL"/>
                             <constraint firstItem="aaT-kL-VdM" firstAttribute="centerX" secondItem="4hi-WL-CZf" secondAttribute="centerX" id="zGh-2B-15M"/>
@@ -865,14 +908,20 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ob6-21-owX">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Country Code" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bdH-Ty-6Lz" customClass="HoshiTextField" customModule="Meeraki" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="38.5" width="110" height="60"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create Your Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yt1-2V-PTJ">
+                                        <rect key="frame" x="20" y="30" width="335" height="23"/>
+                                        <fontDescription key="fontDescription" name="ClanPro-News" family="Clan Pro" pointSize="18"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="+91" placeholder="Country Code" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bdH-Ty-6Lz" customClass="HoshiTextField" customModule="Meeraki" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="78" width="117" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="kfQ-AY-i8W"/>
                                         </constraints>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" name="ClanPro-Book" family="Clan Pro" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <fontDescription key="fontDescription" name="ClanPro-Book" family="Clan Pro" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
                                                 <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -884,17 +933,40 @@
                                                 <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="placeholderFontScale">
-                                                <real key="value" value="0.94999999999999996"/>
+                                                <real key="value" value="0.90000000000000002"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Mobile Number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KVO-ZE-LLv" customClass="HoshiTextField" customModule="Meeraki" customModuleProvider="target">
+                                        <rect key="frame" x="147" y="78" width="208" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="fXJ-ZM-vIp"/>
+                                        </constraints>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="ClanPro-Book" family="Clan Pro" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="tel"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
+                                                <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="placeholderFontScale">
+                                                <real key="value" value="0.90000000000000002"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email Address" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qew-kB-6cz" customClass="HoshiTextField" customModule="Meeraki" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="123.5" width="335" height="60"/>
+                                        <rect key="frame" x="20" y="158" width="335" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="lkk-0W-h5s"/>
                                         </constraints>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" name="ClanPro-Book" family="Clan Pro" pointSize="16"/>
+                                        <fontDescription key="fontDescription" name="ClanPro-Book" family="Clan Pro" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
@@ -907,17 +979,17 @@
                                                 <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="placeholderFontScale">
-                                                <real key="value" value="0.94999999999999996"/>
+                                                <real key="value" value="0.90000000000000002"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cnY-Nc-cVT" customClass="HoshiTextField" customModule="Meeraki" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="208.5" width="335" height="60"/>
+                                        <rect key="frame" x="20" y="238" width="335" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="hGV-zu-LdL"/>
                                         </constraints>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" name="ClanPro-Book" family="Clan Pro" pointSize="16"/>
+                                        <fontDescription key="fontDescription" name="ClanPro-Book" family="Clan Pro" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
@@ -930,17 +1002,17 @@
                                                 <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="placeholderFontScale">
-                                                <real key="value" value="0.94999999999999996"/>
+                                                <real key="value" value="0.90000000000000002"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Re-Enter Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X3c-FP-1f8" customClass="HoshiTextField" customModule="Meeraki" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="293.5" width="335" height="60"/>
+                                        <rect key="frame" x="20" y="318" width="335" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="zZx-Kb-zsN"/>
                                         </constraints>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" name="ClanPro-Book" family="Clan Pro" pointSize="16"/>
+                                        <fontDescription key="fontDescription" name="ClanPro-Book" family="Clan Pro" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
@@ -953,17 +1025,17 @@
                                                 <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="placeholderFontScale">
-                                                <real key="value" value="0.94999999999999996"/>
+                                                <real key="value" value="0.90000000000000002"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Area Code" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OcJ-SX-eEt" customClass="HoshiTextField" customModule="Meeraki" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="378.5" width="335" height="60"/>
+                                        <rect key="frame" x="20" y="398" width="335" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="NnT-cx-h5t"/>
                                         </constraints>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" name="ClanPro-Book" family="Clan Pro" pointSize="16"/>
+                                        <fontDescription key="fontDescription" name="ClanPro-Book" family="Clan Pro" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="postal-code"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
@@ -976,17 +1048,17 @@
                                                 <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="placeholderFontScale">
-                                                <real key="value" value="0.94999999999999996"/>
+                                                <real key="value" value="0.90000000000000002"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ch2-Yi-5de" customClass="RoundButton" customModule="Meeraki" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="518.5" width="335" height="40"/>
+                                        <rect key="frame" x="20" y="592" width="335" height="35"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="hvs-Lk-StP"/>
+                                            <constraint firstAttribute="height" constant="35" id="hvs-Lk-StP"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="ClanPro-News" family="Clan Pro" pointSize="20"/>
+                                        <fontDescription key="fontDescription" name="ClanPro-News" family="Clan Pro" pointSize="17"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Submit">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1003,60 +1075,134 @@
                                             <action selector="submitBtnTapped:" destination="H8Y-hd-PR8" eventType="touchUpInside" id="nWd-rc-Zrw"/>
                                         </connections>
                                     </button>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Mobile Number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KVO-ZE-LLv" customClass="HoshiTextField" customModule="Meeraki" customModuleProvider="target">
-                                        <rect key="frame" x="140" y="38.5" width="215" height="60"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="60" id="fXJ-ZM-vIp"/>
-                                        </constraints>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" name="ClanPro-Book" family="Clan Pro" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="tel"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
-                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
-                                                <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
-                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="placeholderFontScale">
-                                                <real key="value" value="0.94999999999999996"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FdZ-3U-m7S">
+                                        <rect key="frame" x="20" y="78" width="117" height="60"/>
+                                        <connections>
+                                            <action selector="countryCodeBtnTapped:" destination="H8Y-hd-PR8" eventType="touchUpInside" id="gJV-JD-G66"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.31372549020000001" green="0.72156862749999995" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="cnY-Nc-cVT" firstAttribute="leading" secondItem="ob6-21-owX" secondAttribute="leading" constant="20" id="0ad-af-zDt"/>
                                     <constraint firstItem="qew-kB-6cz" firstAttribute="leading" secondItem="ob6-21-owX" secondAttribute="leading" constant="20" id="7Es-LT-aEm"/>
                                     <constraint firstItem="bdH-Ty-6Lz" firstAttribute="leading" secondItem="ob6-21-owX" secondAttribute="leading" constant="20" id="Cm6-Xb-ACe"/>
-                                    <constraint firstItem="cnY-Nc-cVT" firstAttribute="top" secondItem="qew-kB-6cz" secondAttribute="bottom" constant="25" id="Ec0-Na-PoP"/>
+                                    <constraint firstItem="FdZ-3U-m7S" firstAttribute="height" secondItem="bdH-Ty-6Lz" secondAttribute="height" id="DUi-Fj-Ysh"/>
+                                    <constraint firstAttribute="bottom" secondItem="Ch2-Yi-5de" secondAttribute="bottom" constant="20" id="Dic-cN-rEo"/>
+                                    <constraint firstItem="cnY-Nc-cVT" firstAttribute="top" secondItem="qew-kB-6cz" secondAttribute="bottom" constant="20" id="Ec0-Na-PoP"/>
+                                    <constraint firstItem="FdZ-3U-m7S" firstAttribute="top" secondItem="Yt1-2V-PTJ" secondAttribute="bottom" constant="25" id="Gk2-ds-HEf"/>
+                                    <constraint firstItem="Yt1-2V-PTJ" firstAttribute="leading" secondItem="ob6-21-owX" secondAttribute="leading" constant="20" id="I5I-hj-JPN"/>
                                     <constraint firstAttribute="trailing" secondItem="qew-kB-6cz" secondAttribute="trailing" constant="20" id="Sj3-gx-hsv"/>
-                                    <constraint firstItem="qew-kB-6cz" firstAttribute="top" secondItem="bdH-Ty-6Lz" secondAttribute="bottom" constant="25" id="Uce-gm-qg3"/>
+                                    <constraint firstItem="qew-kB-6cz" firstAttribute="top" secondItem="bdH-Ty-6Lz" secondAttribute="bottom" constant="20" id="Uce-gm-qg3"/>
                                     <constraint firstItem="OcJ-SX-eEt" firstAttribute="leading" secondItem="ob6-21-owX" secondAttribute="leading" constant="20" id="ZrF-CE-HLV"/>
                                     <constraint firstAttribute="trailing" secondItem="cnY-Nc-cVT" secondAttribute="trailing" constant="20" id="ZyD-JA-tXm"/>
                                     <constraint firstAttribute="trailing" secondItem="X3c-FP-1f8" secondAttribute="trailing" constant="20" id="cCP-b3-sll"/>
                                     <constraint firstAttribute="trailing" secondItem="OcJ-SX-eEt" secondAttribute="trailing" constant="20" id="dHn-yO-Fo7"/>
-                                    <constraint firstItem="Ch2-Yi-5de" firstAttribute="top" secondItem="OcJ-SX-eEt" secondAttribute="bottom" constant="80" id="hRo-AY-Aj8"/>
+                                    <constraint firstAttribute="trailing" secondItem="Yt1-2V-PTJ" secondAttribute="trailing" constant="20" id="eAb-Y2-3To"/>
+                                    <constraint firstItem="FdZ-3U-m7S" firstAttribute="width" secondItem="bdH-Ty-6Lz" secondAttribute="width" id="fMs-nh-dAd"/>
+                                    <constraint firstItem="FdZ-3U-m7S" firstAttribute="centerX" secondItem="bdH-Ty-6Lz" secondAttribute="centerX" id="fzc-FB-cH6"/>
                                     <constraint firstAttribute="trailing" secondItem="KVO-ZE-LLv" secondAttribute="trailing" constant="20" id="j1h-KR-2CM"/>
-                                    <constraint firstItem="OcJ-SX-eEt" firstAttribute="top" secondItem="X3c-FP-1f8" secondAttribute="bottom" constant="25" id="kpw-jH-Nij"/>
+                                    <constraint firstItem="bdH-Ty-6Lz" firstAttribute="top" secondItem="Yt1-2V-PTJ" secondAttribute="bottom" constant="25" id="jmP-bB-5hC"/>
+                                    <constraint firstItem="OcJ-SX-eEt" firstAttribute="top" secondItem="X3c-FP-1f8" secondAttribute="bottom" constant="20" id="kpw-jH-Nij"/>
                                     <constraint firstItem="Ch2-Yi-5de" firstAttribute="leading" secondItem="ob6-21-owX" secondAttribute="leading" constant="20" id="m9A-pQ-bu0"/>
                                     <constraint firstItem="X3c-FP-1f8" firstAttribute="leading" secondItem="ob6-21-owX" secondAttribute="leading" constant="20" id="mkO-Y6-HPK"/>
-                                    <constraint firstItem="X3c-FP-1f8" firstAttribute="top" secondItem="cnY-Nc-cVT" secondAttribute="bottom" constant="25" id="pPh-gC-Lau"/>
-                                    <constraint firstItem="qew-kB-6cz" firstAttribute="top" secondItem="KVO-ZE-LLv" secondAttribute="bottom" constant="25" id="roo-Ss-l9b"/>
-                                    <constraint firstItem="X3c-FP-1f8" firstAttribute="centerY" secondItem="ob6-21-owX" secondAttribute="centerY" id="uhI-Xf-1Y1"/>
+                                    <constraint firstItem="X3c-FP-1f8" firstAttribute="top" secondItem="cnY-Nc-cVT" secondAttribute="bottom" constant="20" id="pPh-gC-Lau"/>
+                                    <constraint firstItem="Yt1-2V-PTJ" firstAttribute="top" secondItem="ob6-21-owX" secondAttribute="top" constant="30" id="r99-Gf-hoi"/>
+                                    <constraint firstItem="qew-kB-6cz" firstAttribute="top" secondItem="KVO-ZE-LLv" secondAttribute="bottom" constant="20" id="roo-Ss-l9b"/>
                                     <constraint firstItem="KVO-ZE-LLv" firstAttribute="leading" secondItem="bdH-Ty-6Lz" secondAttribute="trailing" constant="10" id="vDA-mu-4PM"/>
                                     <constraint firstAttribute="trailing" secondItem="Ch2-Yi-5de" secondAttribute="trailing" constant="20" id="vzo-es-P2U"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HDT-hT-0tc">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <subviews>
+                                    <view alpha="0.65000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uYL-Ds-jwX">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n2Y-WD-2KR">
+                                        <rect key="frame" x="0.0" y="323.5" width="375" height="323.5"/>
+                                        <subviews>
+                                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="acS-LH-3hi" customClass="CountryPicker" customModule="CountryPicker">
+                                                <rect key="frame" x="0.0" y="41" width="375" height="282"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </pickerView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tB8-5I-oBx">
+                                                <rect key="frame" x="0.0" y="40" width="375" height="1"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="1" id="XSA-Gz-1z8"/>
+                                                </constraints>
+                                            </view>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T55-C3-diu">
+                                                <rect key="frame" x="0.0" y="0.0" width="70" height="35"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="70" id="Ez4-lI-3qL"/>
+                                                    <constraint firstAttribute="height" constant="35" id="o7e-kh-N9X"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="ClanPro-Bold" family="Clan Pro" pointSize="17"/>
+                                                <state key="normal" title="Cancel">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="pickerCancelBtnTapped:" destination="H8Y-hd-PR8" eventType="touchUpInside" id="knJ-KC-pcp"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pqo-Gv-poo">
+                                                <rect key="frame" x="285" y="0.0" width="90" height="35"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="35" id="AJG-vk-npO"/>
+                                                    <constraint firstAttribute="width" constant="90" id="VjK-Uf-w2t"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="ClanPro-Bold" family="Clan Pro" pointSize="17"/>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Done">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="countryDoneBtnTapped:" destination="H8Y-hd-PR8" eventType="touchUpInside" id="cKx-5u-tzy"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.0078431372550000003" green="0.5568627451" blue="0.46666666670000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="pqo-Gv-poo" firstAttribute="top" secondItem="n2Y-WD-2KR" secondAttribute="top" id="0nA-3B-p7Z"/>
+                                            <constraint firstItem="tB8-5I-oBx" firstAttribute="top" secondItem="pqo-Gv-poo" secondAttribute="bottom" constant="5" id="2SA-zM-rmm"/>
+                                            <constraint firstItem="T55-C3-diu" firstAttribute="leading" secondItem="n2Y-WD-2KR" secondAttribute="leading" id="8Fp-3w-JnE"/>
+                                            <constraint firstAttribute="trailing" secondItem="acS-LH-3hi" secondAttribute="trailing" id="Gf5-Yu-bV7"/>
+                                            <constraint firstAttribute="bottom" secondItem="acS-LH-3hi" secondAttribute="bottom" id="Hai-MY-loW"/>
+                                            <constraint firstItem="tB8-5I-oBx" firstAttribute="leading" secondItem="n2Y-WD-2KR" secondAttribute="leading" id="UtK-jz-JJ8"/>
+                                            <constraint firstItem="T55-C3-diu" firstAttribute="top" secondItem="n2Y-WD-2KR" secondAttribute="top" id="XA6-bc-uHo"/>
+                                            <constraint firstAttribute="trailing" secondItem="tB8-5I-oBx" secondAttribute="trailing" id="b5V-0s-BJ5"/>
+                                            <constraint firstItem="acS-LH-3hi" firstAttribute="top" secondItem="tB8-5I-oBx" secondAttribute="bottom" id="fjd-n3-o0V"/>
+                                            <constraint firstAttribute="trailing" secondItem="pqo-Gv-poo" secondAttribute="trailing" id="jkV-pp-Tue"/>
+                                            <constraint firstItem="acS-LH-3hi" firstAttribute="leading" secondItem="n2Y-WD-2KR" secondAttribute="leading" id="uyU-v0-vKS"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="n2Y-WD-2KR" secondAttribute="trailing" id="Gre-AP-kqI"/>
+                                    <constraint firstItem="uYL-Ds-jwX" firstAttribute="centerY" secondItem="HDT-hT-0tc" secondAttribute="centerY" id="J6l-Xd-QYU"/>
+                                    <constraint firstItem="n2Y-WD-2KR" firstAttribute="height" secondItem="HDT-hT-0tc" secondAttribute="height" multiplier="0.5" id="OV8-wu-ILC"/>
+                                    <constraint firstItem="uYL-Ds-jwX" firstAttribute="width" secondItem="HDT-hT-0tc" secondAttribute="width" id="VBg-Bi-M7q"/>
+                                    <constraint firstAttribute="bottom" secondItem="n2Y-WD-2KR" secondAttribute="bottom" id="jKW-0u-Zfv"/>
+                                    <constraint firstItem="uYL-Ds-jwX" firstAttribute="height" secondItem="HDT-hT-0tc" secondAttribute="height" id="lWF-sa-fV9"/>
+                                    <constraint firstItem="n2Y-WD-2KR" firstAttribute="leading" secondItem="HDT-hT-0tc" secondAttribute="leading" id="mHB-3m-j9n"/>
+                                    <constraint firstItem="uYL-Ds-jwX" firstAttribute="centerX" secondItem="HDT-hT-0tc" secondAttribute="centerX" id="xbB-Xf-BMP"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.31372549020000001" green="0.72156862749999995" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="s1z-gb-6d6" firstAttribute="trailing" secondItem="ob6-21-owX" secondAttribute="trailing" id="5RR-vA-NHR"/>
+                            <constraint firstItem="s1z-gb-6d6" firstAttribute="trailing" secondItem="HDT-hT-0tc" secondAttribute="trailing" id="AAO-5M-X0S"/>
+                            <constraint firstItem="HDT-hT-0tc" firstAttribute="leading" secondItem="s1z-gb-6d6" secondAttribute="leading" id="Caq-6G-L0r"/>
+                            <constraint firstItem="HDT-hT-0tc" firstAttribute="top" secondItem="s1z-gb-6d6" secondAttribute="top" id="HtV-tT-Yt5"/>
                             <constraint firstItem="s1z-gb-6d6" firstAttribute="bottom" secondItem="ob6-21-owX" secondAttribute="bottom" id="Wlj-UN-oZb"/>
                             <constraint firstItem="ob6-21-owX" firstAttribute="leading" secondItem="s1z-gb-6d6" secondAttribute="leading" id="kdO-oc-xG4"/>
+                            <constraint firstItem="s1z-gb-6d6" firstAttribute="bottom" secondItem="HDT-hT-0tc" secondAttribute="bottom" id="rd7-Sw-eDv"/>
                             <constraint firstItem="ob6-21-owX" firstAttribute="top" secondItem="s1z-gb-6d6" secondAttribute="top" id="stL-cH-E1J"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="s1z-gb-6d6"/>
@@ -1064,6 +1210,8 @@
                     <connections>
                         <outlet property="baseView" destination="Zpd-BL-6KR" id="oG8-e5-QVX"/>
                         <outlet property="contentView" destination="ob6-21-owX" id="cTj-0k-sLN"/>
+                        <outlet property="countryView" destination="HDT-hT-0tc" id="oZG-uB-gU3"/>
+                        <outlet property="picker" destination="acS-LH-3hi" id="E41-SH-G35"/>
                         <outlet property="txtAreaCode" destination="OcJ-SX-eEt" id="Lel-mH-F7c"/>
                         <outlet property="txtConfirmPassword" destination="X3c-FP-1f8" id="eAI-wW-ZJO"/>
                         <outlet property="txtCountryCode" destination="bdH-Ty-6Lz" id="Ty2-EI-bGg"/>
@@ -1074,11 +1222,209 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HSr-QR-1Bo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2004" y="29"/>
+            <point key="canvasLocation" x="2018" y="29"/>
+        </scene>
+        <!--Add Product View Controller-->
+        <scene sceneID="8oa-So-q9c">
+            <objects>
+                <viewController storyboardIdentifier="AddProductViewController" id="cHs-SI-M0n" customClass="AddProductViewController" customModule="Meeraki" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YYb-Rh-X1y">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dQL-UC-71O">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h4L-XH-wOk">
+                                        <rect key="frame" x="20" y="40" width="335" height="30"/>
+                                        <color key="backgroundColor" red="0.0078431372550000003" green="0.5568627451" blue="0.46666666670000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Select category">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="h4L-XH-wOk" firstAttribute="leading" secondItem="dQL-UC-71O" secondAttribute="leading" constant="20" id="TwF-Qn-0HA"/>
+                                    <constraint firstItem="h4L-XH-wOk" firstAttribute="top" secondItem="dQL-UC-71O" secondAttribute="top" constant="40" id="XRo-6n-10K"/>
+                                    <constraint firstAttribute="trailing" secondItem="h4L-XH-wOk" secondAttribute="trailing" constant="20" id="di3-O9-V1i"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.31372549020000001" green="0.72156862749999995" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="XRo-98-q6p" firstAttribute="bottom" secondItem="dQL-UC-71O" secondAttribute="bottom" id="73y-UV-lzG"/>
+                            <constraint firstItem="dQL-UC-71O" firstAttribute="leading" secondItem="XRo-98-q6p" secondAttribute="leading" id="lgI-A2-6Vh"/>
+                            <constraint firstItem="dQL-UC-71O" firstAttribute="top" secondItem="XRo-98-q6p" secondAttribute="top" id="x9M-Zz-mU6"/>
+                            <constraint firstItem="XRo-98-q6p" firstAttribute="trailing" secondItem="dQL-UC-71O" secondAttribute="trailing" id="zkK-uz-e33"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="XRo-98-q6p"/>
+                    </view>
+                    <connections>
+                        <outlet property="btnCategary" destination="h4L-XH-wOk" id="h50-dg-trF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CHg-ae-ume" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2684" y="30"/>
+        </scene>
+        <!--Login View Controller-->
+        <scene sceneID="gCN-Fd-MaN">
+            <objects>
+                <viewController storyboardIdentifier="LoginViewController" id="8Ks-ri-Af4" customClass="LoginViewController" customModule="Meeraki" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Jo2-cg-Ijx">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QtA-iq-lgE" customClass="GradientView" customModule="Meeraki" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C26-HP-7U2">
+                                        <rect key="frame" x="20" y="557" width="335" height="40"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="gLY-Ns-C6Z"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="ClanPro-Book" family="Clan Pro" pointSize="17"/>
+                                        <state key="normal" title="Sign In">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="signInBtnTapped:" destination="8Ks-ri-Af4" eventType="touchUpInside" id="wTm-C4-KCJ"/>
+                                        </connections>
+                                    </button>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter email address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qk2-wA-AKT" customClass="HoshiTextField" customModule="Meeraki" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="382" width="335" height="50"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="ClanPro-Book" family="Clan Pro" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
+                                                <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
+                                                <color key="value" red="0.0072265625000000003" green="0.0072265625000000003" blue="0.0072265625000000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                                <color key="value" red="0.95294117649999999" green="1" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="placeholderFontScale">
+                                                <real key="value" value="0.90000000000000002"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7qB-xN-2Dx" customClass="HoshiTextField" customModule="Meeraki" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="457" width="335" height="50"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="R52-nE-y32"/>
+                                        </constraints>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="ClanPro-Book" family="Clan Pro" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
+                                                <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
+                                                <color key="value" red="0.0072265625000000003" green="0.0072265625000000003" blue="0.0072265625000000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                                <color key="value" red="0.95294117649999999" green="1" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="placeholderFontScale">
+                                                <real key="value" value="0.90000000000000002"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tM9-eK-sxl">
+                                        <rect key="frame" x="303" y="600" width="52" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="J2N-95-SqO"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="ClanPro-Book" family="Clan Pro" pointSize="15"/>
+                                        <state key="normal" title="SignUp">
+                                            <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="BYZ-38-t0r" kind="show" id="6ua-rr-Ng7"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xIG-NB-JnI">
+                                        <rect key="frame" x="136" y="605" width="159" height="18"/>
+                                        <fontDescription key="fontDescription" name="ClanPro-Book" family="Clan Pro" pointSize="14"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="merakiLogo" translatesAutoresizingMaskIntoConstraints="NO" id="wnR-jX-Gw3">
+                                        <rect key="frame" x="87" y="200" width="200" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="KtG-UG-peL"/>
+                                            <constraint firstAttribute="width" constant="200" id="eRX-WP-1ee"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="tM9-eK-sxl" secondAttribute="trailing" constant="20" id="07W-fN-sms"/>
+                                    <constraint firstItem="wnR-jX-Gw3" firstAttribute="top" secondItem="QtA-iq-lgE" secondAttribute="top" constant="200" id="28S-Lj-PWC"/>
+                                    <constraint firstItem="Qk2-wA-AKT" firstAttribute="centerX" secondItem="7qB-xN-2Dx" secondAttribute="centerX" id="6Ei-ko-IDo"/>
+                                    <constraint firstAttribute="bottom" secondItem="C26-HP-7U2" secondAttribute="bottom" constant="70" id="AM0-zL-cAi"/>
+                                    <constraint firstItem="7qB-xN-2Dx" firstAttribute="width" secondItem="C26-HP-7U2" secondAttribute="width" id="CPv-s3-mkC"/>
+                                    <constraint firstItem="tM9-eK-sxl" firstAttribute="top" secondItem="C26-HP-7U2" secondAttribute="bottom" constant="3" id="DAI-yu-qgM"/>
+                                    <constraint firstItem="tM9-eK-sxl" firstAttribute="leading" secondItem="xIG-NB-JnI" secondAttribute="trailing" constant="8" id="EfO-yI-9uc"/>
+                                    <constraint firstItem="xIG-NB-JnI" firstAttribute="top" secondItem="C26-HP-7U2" secondAttribute="bottom" constant="8" id="S6Q-9F-OBM"/>
+                                    <constraint firstItem="C26-HP-7U2" firstAttribute="leading" secondItem="QtA-iq-lgE" secondAttribute="leading" constant="20" id="XSC-BV-419"/>
+                                    <constraint firstAttribute="trailing" secondItem="C26-HP-7U2" secondAttribute="trailing" constant="20" id="XXh-hU-U1i"/>
+                                    <constraint firstItem="C26-HP-7U2" firstAttribute="top" secondItem="7qB-xN-2Dx" secondAttribute="bottom" constant="50" id="hYf-Ly-7pR"/>
+                                    <constraint firstItem="Qk2-wA-AKT" firstAttribute="width" secondItem="7qB-xN-2Dx" secondAttribute="width" id="ldy-FB-izj"/>
+                                    <constraint firstItem="Qk2-wA-AKT" firstAttribute="height" secondItem="7qB-xN-2Dx" secondAttribute="height" id="luh-Uc-b6q"/>
+                                    <constraint firstItem="xIG-NB-JnI" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="QtA-iq-lgE" secondAttribute="leading" constant="20" symbolic="YES" id="o6e-jD-WAB"/>
+                                    <constraint firstItem="7qB-xN-2Dx" firstAttribute="centerX" secondItem="QtA-iq-lgE" secondAttribute="centerX" id="sZ6-EE-CfA"/>
+                                    <constraint firstItem="7qB-xN-2Dx" firstAttribute="top" secondItem="Qk2-wA-AKT" secondAttribute="bottom" constant="25" id="tYB-2J-v0d"/>
+                                    <constraint firstItem="wnR-jX-Gw3" firstAttribute="centerX" secondItem="QtA-iq-lgE" secondAttribute="centerX" id="vJD-wR-Q1a"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="topColor">
+                                        <color key="value" red="0.31372549020000001" green="0.72156862749999995" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="bottomColor">
+                                        <color key="value" red="0.0078431372550000003" green="0.5568627451" blue="0.46666666670000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.5959024235" green="0.23828125" blue="0.20206207479999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6hi-Ps-GB3" firstAttribute="bottom" secondItem="QtA-iq-lgE" secondAttribute="bottom" id="3p2-kc-bD1"/>
+                            <constraint firstItem="6hi-Ps-GB3" firstAttribute="trailing" secondItem="QtA-iq-lgE" secondAttribute="trailing" id="BHy-5k-Lp8"/>
+                            <constraint firstItem="QtA-iq-lgE" firstAttribute="top" secondItem="Jo2-cg-Ijx" secondAttribute="top" id="ZCy-vN-gO1"/>
+                            <constraint firstItem="QtA-iq-lgE" firstAttribute="leading" secondItem="6hi-Ps-GB3" secondAttribute="leading" id="k59-tY-Zay"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6hi-Ps-GB3"/>
+                    </view>
+                    <connections>
+                        <outlet property="btnSignIn" destination="C26-HP-7U2" id="Ezx-ah-4AX"/>
+                        <outlet property="txtEmail" destination="Qk2-wA-AKT" id="NuP-Dp-n0H"/>
+                        <outlet property="txtPassword" destination="7qB-xN-2Dx" id="weM-ww-VVb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I4N-Fe-HgP" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-623" y="30"/>
         </scene>
     </scenes>
     <resources>
         <image name="arrow-right" width="33" height="33"/>
+        <image name="back-arrow" width="25" height="25"/>
+        <image name="card" width="30" height="30"/>
+        <image name="merakiLogo" width="551" height="207"/>
         <image name="phone-hand-one-color" width="250" height="250"/>
         <image name="premium" width="25" height="25"/>
         <image name="product" width="25" height="25"/>

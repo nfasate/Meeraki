@@ -11,4 +11,6 @@ target 'Meeraki' do
   pod 'GoogleMaps'
   pod 'GooglePlaces'
   pod 'GooglePlacePicker'
+  pod 'CountryPickerSwift', '1.7'
+  pod 'Dropdowns'
 end
