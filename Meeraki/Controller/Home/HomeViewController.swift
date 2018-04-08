@@ -41,21 +41,24 @@ class HomeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override var preferredStatusBarStyle : UIStatusBarStyle {
+        return UIStatusBarStyle.lightContent
+    }
+    
     //MARK:- Custom methods
     func setupView() {
         self.title = "My Product"
         if let patternImage = UIImage(named: "Pattern") {
             view.backgroundColor = UIColor(patternImage: patternImage)
         }
+        collectionView?.backgroundColor = UIColor.clear
+        collectionView?.contentInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         // Set the PinterestLayout delegate
         if let layout = collectionView?.collectionViewLayout as? PinterestLayout {
             layout.delegate = self
         }
-        collectionView!.backgroundColor = UIColor.clear
-        collectionView!.contentInset = UIEdgeInsets(top: 23, left: 5, bottom: 10, right: 5)
         
-        collectionView?.translatesAutoresizingMaskIntoConstraints = false
-        self.automaticallyAdjustsScrollViewInsets = false
+        //self.automaticallyAdjustsScrollViewInsets = false
         
         addBarButtons()
     }
@@ -136,7 +139,9 @@ class HomeViewController: UIViewController {
     }
 
     func hideSearchBar() {
-        self.searchBar.resignFirstResponder()
+        searchActive = false
+        searchBar.text = nil
+        searchBar.resignFirstResponder()
         UIView.animate(withDuration: 0.6, animations: {
             self.searchBar.transform = CGAffineTransform(translationX: 5000, y: self.searchBar.frame.origin.y)
         }) { (success) in
@@ -145,16 +150,6 @@ class HomeViewController: UIViewController {
             self.navigationItem.rightBarButtonItems  = [self.navAddProductBtn!, self.navSearchBtn]
             self.navigationItem.leftBarButtonItems = [self.navSignOutBtn!]
         }
-    }
-    
-    func showProductInfoScreen(indexItem: Int) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let productInfo = storyboard.instantiateViewController(withIdentifier: "ProductInfoViewController") as! ProductInfoViewController
-        let photo = photos[indexItem]
-        productInfo.title = photo.caption
-        //self.navigationItem.backBarButtonItem?.title = ""
-        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-        self.navigationController?.pushViewController(productInfo, animated: true)
     }
     
     func showLetsBeginScreen() {
@@ -166,11 +161,19 @@ class HomeViewController: UIViewController {
         present(letsBeginController, animated: false, completion: nil)
     }
     
-    func showWebViewScreen() {
+    func showProductInfoScreen(_ item: Photo) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let productInfo = storyboard.instantiateViewController(withIdentifier: "ProductInfoViewController") as! ProductInfoViewController
+        productInfo.title = item.caption
+        //self.navigationItem.backBarButtonItem?.title = ""
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        self.navigationController?.pushViewController(productInfo, animated: true)
+    }
+    
+    func showWebViewScreen(_ item: Photo) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let webViewController = storyboard.instantiateViewController(withIdentifier: "WebViewController") as! WebViewController
-        webViewController.title = "Samsung"
-        //self.navigationItem.backBarButtonItem?.title = ""
+        webViewController.title = item.caption
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         self.navigationController?.pushViewController(webViewController, animated: true)
     }
@@ -189,10 +192,10 @@ class HomeViewController: UIViewController {
     }
     
     @objc func showProductListScreen(_ sender: AnyObject) {
-        //let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        //let productList = storyboard.instantiateViewController(withIdentifier: "AddProductViewController") as! AddProductViewController
-        //self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-        //self.navigationController?.pushViewController(productList, animated: true)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let productList = storyboard.instantiateViewController(withIdentifier: "AddProductViewController") as! AddProductViewController
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        self.navigationController?.pushViewController(productList, animated: true)
     }
 }
 
@@ -207,77 +210,53 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AnnotatedPhotoCell", for: indexPath) as! AnnotatedPhotoCell
-        if searchActive {
-            cell.photo = filtered[indexPath.item]
-        }else {
-            cell.photo = photos[indexPath.item]
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AnnotatedPhotoCell", for: indexPath)
+        if let annotateCell = cell as? AnnotatedPhotoCell {
+            if searchActive {
+                annotateCell.photo = filtered[indexPath.item]
+            }else {
+                annotateCell.photo = photos[indexPath.item]
+            }
         }
-        
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: false)
-        
+        var item: Photo?
         if searchActive {
-            if filtered[indexPath.item].caption == "Samsung" {
-                showWebViewScreen()
-            }else {
-                showProductInfoScreen(indexItem: indexPath.item)
-            }
+            hideSearchBar()
+            item = filtered[indexPath.item]
         }else {
-            if photos[indexPath.item].caption == "Samsung" {
-                showWebViewScreen()
-            }else {
-                showProductInfoScreen(indexItem: indexPath.item)
-            }
+            item = photos[indexPath.item]
         }
         
-        
+        if item?.caption == "Samsung" {
+            showWebViewScreen(item!)
+        }else {
+            showProductInfoScreen(item!)
+        }
     }
 }
 
 //MARK:- PinterestLayoutDelegate
 extension HomeViewController: PinterestLayoutDelegate {
     // 1. Returns the photo height
-    func collectionView(_ collectionView:UICollectionView, heightForPhotoAtIndexPath indexPath:IndexPath , withWidth width:CGFloat) -> CGFloat {
-        var photo:Photo?
+    func collectionView(_ collectionView: UICollectionView, heightForPhotoAtIndexPath indexPath:IndexPath) -> CGFloat {
         if searchActive {
-            photo = filtered[indexPath.item]
-        }else {
-            photo = photos[indexPath.item]
+            return filtered[indexPath.item].image.size.height
         }
-        
-        let boundingRect =  CGRect(x: 0, y: 0, width: width, height: CGFloat(MAXFLOAT))
-        let rect  = AVMakeRect(aspectRatio: (photo?.image.size)!, insideRect: boundingRect)
-        return rect.size.height
-    }
-    
-    // 2. Returns the annotation size based on the text
-    func collectionView(_ collectionView: UICollectionView, heightForAnnotationAtIndexPath indexPath: IndexPath, withWidth width: CGFloat) -> CGFloat {
-        let annotationPadding = CGFloat(4)
-        let annotationHeaderHeight = CGFloat(17)
-        
-        var photo:Photo?
-        if searchActive {
-            photo = filtered[indexPath.item]
-        }else {
-            photo = photos[indexPath.item]
-        }
-        
-        //let photo = photos[indexPath.item]
-        let font = UIFont(name: "ClanPro-Book", size: 10)!
-        let commentHeight = photo?.heightForComment(font, width: width)
-        let height = annotationPadding + annotationHeaderHeight + commentHeight! + annotationPadding
-        return height
+        return photos[indexPath.item].image.size.height
     }
 }
 
 //MARK:- UISearchBarDelegate
 extension HomeViewController: UISearchBarDelegate {
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-        searchActive = true
+    }
+    
+    func searchBarShouldEndEditing(_ searchBar: UISearchBar) -> Bool {
+        return true
     }
     
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
@@ -286,69 +265,35 @@ extension HomeViewController: UISearchBarDelegate {
         collectionView.collectionViewLayout.invalidateLayout()
     }
     
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchActive = false
+    }
+    
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchActive = false
         
         searchBar.text = nil
         searchBar.resignFirstResponder()
-        //self.searchBar.showsCancelButton = false
         collectionView.reloadData()
         collectionView.collectionViewLayout.invalidateLayout()
         hideSearchBar()
     }
     
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        searchActive = false
-    }
-    
-    func searchBarShouldEndEditing(_ searchBar: UISearchBar) -> Bool {
-        return true
-    }
-    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        
-        self.searchActive = true;
-        //self.searchBar.showsCancelButton = true
-        //filtered = []
+        searchActive = true
         
         let searchString = searchBar.text
-        
-        filtered = photos.filter({ (item) -> Bool in
-            let captionText: NSString = item.caption as NSString
-            
-            return (captionText.range(of: searchString!, options: NSString.CompareOptions.caseInsensitive).location) != NSNotFound
-        })
+        if searchString != "" {
+            filtered = photos.filter({ (item) -> Bool in
+                let captionText: NSString = item.caption as NSString
+                
+                return (captionText.range(of: searchString!, options: NSString.CompareOptions.caseInsensitive).location) != NSNotFound
+            })
+        }else {
+            searchActive = false
+        }
         
         collectionView.reloadData()
         collectionView.collectionViewLayout.invalidateLayout()
-        
-//        DispatchQueue.global(qos: .background).async
-//            {
-//                for xdata in self.photos
-//                {
-//                    let nameRange: NSRange = xdata.rangeOfString(searchText, options: [NSString.CompareOptions.CaseInsensitiveSearch ,NSString.CompareOptions.AnchoredSearch ])
-//
-//                    if nameRange.location != NSNotFound{
-//
-//                        self.filtered.addObject(xdata)
-//                    }
-//
-//                }//end of for
-//
-//                DispatchQueue.main.async {
-//                    self.collectionView.reloadData()
-//                }
-//        }
-    }
-    
-    
-    func searchBarBookmarkButtonClicked(_ searchBar: UISearchBar) {
-        if !searchActive {
-            searchActive = true
-            collectionView.reloadData()
-            collectionView.collectionViewLayout.invalidateLayout()
-        }
-        
-        //searchController.searchBar.resignFirstResponder()
     }
 }
